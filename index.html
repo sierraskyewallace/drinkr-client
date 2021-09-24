@@ -29,7 +29,25 @@
   </div>
 </nav>
 
-    <div class="container">
+    <button id="toggle-form" class="btn btn-primary">Create a Drink</button>
+    <div id="form-container">
+        <form id="new-drink-form" method="post">
+            <input type="text" name="name" placeholder="Drink Name">
+            <br><br>
+            <input type="text" name="description" placeholder="Description">
+            <br><br>
+            <input type="text" name="instructions" placeholder="Ingredients">
+            <br><br>
+            <input type="text" name="ingredients" placeholder="Instructions">
+            <br><br>
+            <input type="text" name="image" placeholder="Add an Image">
+            <br><br>
+            <input type="submit" value="Create Drink">
+        </form>
+    </div>
+  
+
+    <div class="drinks-container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
