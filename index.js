@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // hide create form on page load, show on click
     const createForm = document.querySelector('#form-container');
+    createForm.style.display = 'none';
     createForm.addEventListener('submit', function (e) {
         e.preventDefault();
         createFormHandler(e);
