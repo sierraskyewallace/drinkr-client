@@ -1,6 +1,3 @@
-const BASE_URL = 'http://localhost:3000/api/v1';
-const DRINKS_URL = `${BASE_URL}/drinks`;
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,55 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
         createButton.style.display = 'none';
 
     });
-
-   // populate ingredients dropdown with ingredients from api by their name
-    const ingredientDropdown = document.querySelector('#ingredient-dropdown');
-    fetch(`${BASE_URL}/ingredients`)
-        .then(res => res.json())
-        .then(ingredients => {
-            ingredients.data.forEach(ingredient => {
-                const option = document.createElement('option');
-                option.value = ingredient.id;
-                option.innerText = ingredient.attributes.name;
-                ingredientDropdown.appendChild(option);
-            });
-        });
-    
-
-    
-    
-
-
-
-
-    function createFormHandler(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const drink = {
-            name: formData.get('name'),
-            description: formData.get('description'),
-            image: formData.get('image_url'),
-            ingredients: parseInt(formData.get('ingredients')),
-            instructions: formData.get('instructions')
-        };
-        fetch(DRINKS_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(drink)
-        })
-            .then(response => response.json())
-            .then(drink => {
-                let newDrink = new Drink(drink, drink.attributes);
-                document.querySelector('#drinks-container').innerHTML += newDrink.renderDrink();
-            });
-    };
         
-            
 
+    
     function getDrinks() {
-        fetch(DRINKS_URL)
+        fetch("http://localhost:3000/api/v1/drinks")
             .then(response => response.json())
             .then(drinks => {
                 drinks.data.forEach(drink => {
