@@ -24,6 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
+   // populate ingredients dropdown with ingredients from api by their name
+    const ingredientDropdown = document.querySelector('#ingredient-dropdown');
+    fetch(`${BASE_URL}/ingredients`)
+        .then(res => res.json())
+        .then(ingredients => {
+            ingredients.data.forEach(ingredient => {
+                const option = document.createElement('option');
+                option.value = ingredient.id;
+                option.innerText = ingredient.attributes.name;
+                ingredientDropdown.appendChild(option);
+            });
+        });
+    
+
+    
+    
+
+
+
+
     function createFormHandler(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
