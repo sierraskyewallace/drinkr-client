@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const drink = {
             name: formData.get('name'),
             description: formData.get('description'),
-            image: formData.get('image'),
+            image: formData.get('image_url'),
             ingredients: parseInt(formData.get('ingredients')),
             instructions: formData.get('instructions')
         };
