@@ -53,12 +53,12 @@
             <br><br>
             <textarea type="text" name="instructions" rows="4" placeholder="Instructions"></textarea>
             <br><br>
-            <!--- select ingredients that exist or add new ingredient-->
-            <select id="ingredient-dropdown"name="ingredients">
-                <option value="">Select an Ingredient</option>
-                <option value=""id="ingredient-name"></option>
-                <option value=""id="add-new-ingredient">Add a New Ingredient</option>
-                </select>
+            <!--- select multiple ingredients from dropdown that exist or add new ingredient-->
+            <select multiple class="form-control" name="ingredients[]" id="ingredient-dropdown">
+                <option value=""id="ingredient">Select Ingredients</option>
+            <br><br>
+            <!---add new ingredient-->
+            <input type="text" name="new-ingredient" placeholder="Add New Ingredient">
                 <br><br>
             <input type="text" name="image" placeholder="Add an Image">
             <br><br>
