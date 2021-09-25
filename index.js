@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     getDrinks();
-
+    getIngredients();
     // hide create form on page load, show on click
     const createForm = document.querySelector('#form-container');
     createForm.style.display = 'none';
@@ -20,9 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
         createButton.style.display = 'none';
 
     });
-        
 
-    
+
+
+    function getIngredients() {
+        fetch("http://localhost:3000/api/v1/ingredients")
+            .then(response => response.json())
+            .then(ingredients => {
+                ingredients.data.forEach(function (ingredient) {
+                    console.log(ingredients);
+                    let newIngredient = new Ingredient(ingredient, ingredient.attributes);
+                    document.querySelector('#ingredients-container').innerHTML += newIngredient.renderIngredients();
+                });
+            });
+    }
+
+
     function getDrinks() {
         fetch("http://localhost:3000/api/v1/drinks")
             .then(response => response.json())
