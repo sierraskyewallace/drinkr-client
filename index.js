@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
         createButton.style.display = 'none';
 
     });
+    
+    // create drink form handeler with option to choose ingredients or add new ingredients
+    
+       
+
+
+        
 
 
 

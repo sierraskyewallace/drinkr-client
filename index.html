@@ -49,20 +49,26 @@
         <br><br>
         <form id="create-drink-form" method="post">
             
-            <input type="text" name="name" placeholder="Drink Name">
+            <input type="text" id="drink-name"name="name" placeholder="Drink Name">
             <br><br>
-            <input type="text" name="description" placeholder="Description">
+            <input type="text" id="drink-description"name="description" placeholder="Description">
             <br><br>
-            <textarea type="text" name="instructions" rows="4" placeholder="Instructions"></textarea>
+            <textarea type="text"id="drink-instructions" name="instructions" rows="4" placeholder="Instructions"></textarea>
             <br><br>
+            <input type="text"name="image_url" id="drink-image-url"placeholder="Image URL">
+            <br><br>
+            <!--- add new ingredient and select for form-->
             
+
+
             <!---enumerable checkboxes for ingredients array-->
             <label for="ingredients">Ingredients</label>
             <br><br>
             
             <div class="ingredients-container"id="ingredients-container">
+               
                 </div>
-
+         
                
 
 
@@ -71,9 +77,9 @@
             <br><br>
             <input type="submit" name="submit" value="Submit">
 
-
-
         </form>
+        <br><br>
+        
     </div>
   
 
