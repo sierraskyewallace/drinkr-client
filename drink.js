@@ -6,6 +6,7 @@ class Drink {
     this.instructions = drinkAttributes.instructions
     // included ingredients in a list
         this.ingredients = drinkAttributes.ingredients
+      Drink.all.push(this)
     
   }
     
@@ -40,3 +41,5 @@ class Drink {
     }
     
 }
+
+Drink.all = [];
