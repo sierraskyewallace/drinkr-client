@@ -23,16 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function createFormHandler(e) {
         const name = document.querySelector('#drink-name').value;
-
-        // liqours
         const ingredients = document.querySelector('#drink-ingredients').value;
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
-        postDrink(name, liqours, ingredients, instructions, image_url);
+        const liqour = document.querySelector('#liqour-dropdown').value;
+        postDrink(name, liqour, ingredients, instructions, image_url);
     }
 
-    function postDrink(name, liqours, ingredients, instructions, image_url) {
-        const drinkData = { name, liqours, ingredients, instructions, image_url };
+    function postDrink(name, liqour, ingredients, instructions, image_url) {
+        const drinkData = { name, liqour, ingredients, instructions, image_url };
         fetch('http://localhost:3000/api/v1/drinks', {
             // POST request
             method: "POST",

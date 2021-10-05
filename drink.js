@@ -5,6 +5,7 @@ class Drink {
     this.image_url = drinkAttributes.image_url
     this.instructions = drinkAttributes.instructions
     this.ingredients = drinkAttributes.ingredients
+    this.liqour = drinkAttributes.liqour
     Drink.all.push(this)
     
   }
