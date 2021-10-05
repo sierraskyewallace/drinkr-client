@@ -24,13 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function createFormHandler(e) {
         const name = document.querySelector('#drink-name').value;
         const description = document.querySelector('#drink-description').value;
-        // grab multiple checkboxes for ingredients
-        const ingredients = document.querySelectorAll('input[type="checkbox"]:checked');
-        const ingredientsArray = [];
+        // grab ingredient input values
+        const ingredients = document.querySelectorAll('#ingredient-input');
+        const ingredientArray = [];
         for (let i = 0; i < ingredients.length; i++) {
-            ingredientsArray.push(ingredients[i].value);
+            ingredientArray.push(ingredients[i].value);
         }
         
+        
+
+
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
         postDrink(name, description, ingredients, instructions, image_url);

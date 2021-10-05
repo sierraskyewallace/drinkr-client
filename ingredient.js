@@ -7,10 +7,12 @@ class Ingredient {
 
   // render and return ingredients as checkboxes
   renderIngredients() {
+    return `
+      <div class="ingredient-checkbox">
+        <input type="checkbox" name="ingredient" value="${this.id}" id="ingredient-${this.id}">
+        <label for="ingredient-${this.id}">${this.name}</label>
+      </div>
+    `;
     
-
-    let checkbox = `<input type="checkbox" id="ingredients"name="ingredient" value="${this.id}">${this.name}</input>`;
-    return checkbox;
   }
-
 }
