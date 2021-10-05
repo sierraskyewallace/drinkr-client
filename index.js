@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     getDrinks();
-    getIngredients();
+    getLiqours();
     // hide create form on page load, show on click
     const createForm = document.querySelector('#form-container');
     createForm.style.display = 'none';
@@ -23,24 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function createFormHandler(e) {
         const name = document.querySelector('#drink-name').value;
-        const description = document.querySelector('#drink-description').value;
-        // grab ingredient input values
-        const ingredients = document.querySelectorAll('#ingredient-input');
-        const ingredientArray = [];
-        for (let i = 0; i < ingredients.length; i++) {
-            ingredientArray.push(ingredients[i].value);
-        }
-        
-        
 
-
+        // liqours
+        const ingredients = document.querySelector('#ingredients').value;
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
-        postDrink(name, description, ingredients, instructions, image_url);
+        postDrink(name, liqours, ingredients, instructions, image_url);
     }
 
-    function postDrink(name, description, ingredients, instructions, image_url) {
-        const drinkData = { name, description, ingredients, instructions, image_url };
+    function postDrink(name, liqours, ingredients, instructions, image_url) {
+        const drinkData = { name, liqours, ingredients, instructions, image_url };
         fetch('http://localhost:3000/api/v1/drinks', {
             // POST request
             method: "POST",
@@ -65,14 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    function getIngredients() {
-        fetch("http://localhost:3000/api/v1/ingredients")
+    function getLiqours() {
+        fetch("http://localhost:3000/api/v1/liqours")
             .then(response => response.json())
-            .then(ingredients => {
-                ingredients.data.forEach(function (ingredient) {
-                    console.log(ingredients);
-                    let newIngredient = new Ingredient(ingredient, ingredient.attributes);
-                    document.querySelector('#ingredients-container').innerHTML += newIngredient.renderIngredients();
+            .then(liqours => {
+                liqours.data.forEach(function (liqour) {
+                    console.log(liqours);
+                    let newLiqour = new Liqour(liqour, liqours.attributes);
+                    document.querySelector('#liqours-container').innerHTML += newLiqour.renderLiqour();
                 });
             });
     }

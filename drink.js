@@ -4,9 +4,8 @@ class Drink {
     this.name = drinkAttributes.name
     this.image_url = drinkAttributes.image_url
     this.instructions = drinkAttributes.instructions
-    // included ingredients in a list
-        this.ingredients = drinkAttributes.ingredients
-      Drink.all.push(this)
+    this.ingredients = drinkAttributes.ingredients
+    Drink.all.push(this)
     
   }
     
@@ -18,7 +17,7 @@ class Drink {
           <img src=${this.image_url} class="card-img-top"height="200" width="50"alt="...">
           <div class="card-body">
             <h3 class="card-title">${this.name}</h3>
-            <h5 class="card-title">${this.description}</h5>
+            <h5 class="card-title">${this.liqour.name}</h5>
             <ul>
                 <!--- ingredients nested -->
                 ${this.ingredients.map(ingredient => `<li>${ingredient.name}</li>`).join('')}
