@@ -16,7 +16,7 @@
     <!--- imports-->
     <script src="index.js"></script>
     <script src="drink.js"></script>
-    <script src="ingredient.js"></script>
+    <script src="liqour.js"></script>
     
     <!---style-->
     <style>
@@ -51,28 +51,26 @@
             
             <input type="text" id="drink-name"name="name" placeholder="Drink Name">
             <br><br>
-            <input type="text" id="drink-description"name="description" placeholder="Description">
-            <br><br>
             <textarea type="text"id="drink-instructions" name="instructions" rows="4" placeholder="Instructions"></textarea>
             <br><br>
             <input type="text"name="image_url" id="drink-image-url"placeholder="Image URL">
+            <br><br>
+            <input type="text"name="ingredients" id="drink-ingredients"placeholder="Ingredients">
             <br><br>
             <!--- add new ingredient and select for form-->
             
 
 
             <!---enumerable checkboxes for ingredients array-->
-            <label for="ingredients">Ingredients</label>
+            <label for="liqours">Choose a Liqour</label>
             <br><br>
             
-            <div class="ingredients-container"id="ingredients-container">
-                <div class="input-group">
-                <span class="input-group-text">Add new</span>
-                <input type="text" aria-label="" id="ingredient-input"class="form-control">
+            <div class="liqours-container"id="liqours-container">
+                <!--- checkboxes for liqours-->
             </div>
 
 
-            </div>
+    
                 
 
             <br><br>

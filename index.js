@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const name = document.querySelector('#drink-name').value;
 
         // liqours
-        const ingredients = document.querySelector('#ingredients').value;
+        const ingredients = document.querySelector('#drink-ingredients').value;
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
         postDrink(name, liqours, ingredients, instructions, image_url);
