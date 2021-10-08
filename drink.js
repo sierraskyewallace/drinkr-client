@@ -15,22 +15,20 @@ class Drink {
         <br><br>
         <div class="col-md-4"style="margin: 2em">
         <div class="card text-center text-white bg-dark">
-          <img src=${this.image_url} class="card-img-top"height="200" width="50"alt="...">
+          <img src=${this.image_url} class="card-img-top"height="220" width="50"alt="...">
           <div class="card-body">
             <h3 class="card-title">${this.name}</h3>
-            <h5 class="card-title">${this.liqour.name}</h5>
+            <h6 class="card-title">${this.liqour.name}</h6>
+            Ingredients |
             <ul>
-                Ingredients |
+                
+                
                 ${this.ingredients}
             </ul>
-            <p class="card-text">Instructions | ${this.instructions}</p>
-            <div class="d-flex justify-content-center">
-              <div class="btn-group">
-              <button class="btn btn-light">
-               <i class="fas fa-pen"></i></button>
-               <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-               </div>
-            </div>
+            <br><br>
+            <p class="card-text">Instructions</p>
+            <p class="card-text"> ${this.instructions}</p>
+            
           </div>
         </div>
       </div>
