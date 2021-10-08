@@ -13,9 +13,9 @@ class Drink {
     renderDrink() {
         return `
         
-        <div class="row row-cols-1 row-cols-md-2"style="margin: 3em;">
-        <div class="col-md-4">
-        <div class="card text-left text-white bg-dark mb-3 w-40 h-20">
+        
+        <div class="col-md-4"style="margin: 2em;">
+        <div class="card text-left text-white bg-dark">
         <img src=${this.image_url} class="card-img-top"height="220" width="50"alt="..."> <div class="card-body"> 
         <h3 class="card-title">${this.name}</h3> 
         <h6 class="card-title">Liqour | ${this.liqour.name}</h6>

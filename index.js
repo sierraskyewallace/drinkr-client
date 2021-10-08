@@ -46,9 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(drink => {
                 console.log(drink);
                 const drinkData = drink.data
-                // render JSON response
+                
                 let newDrink = new Drink(drink, drinkData.attributes)
                 document.querySelector('#drinks-container').innerHTML += newDrink.renderDrink()
+                
+                createForm.style.display = 'none';
+                createButton.style.display = 'block';
+
+
             })
     }
 
