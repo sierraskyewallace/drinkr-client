@@ -13,29 +13,26 @@ class Drink {
     renderDrink() {
         return `
         <br><br>
-        <div class="col-md-4"style="margin: 2em">
+        <div class="container">
+        <div class="row-3">
+        <div class="col-3"style="margin: 2em">
         <div class="card text-center text-white bg-dark">
-          <img src=${this.image_url} class="card-img-top"height="220" width="50"alt="...">
-          <div class="card-body">
-            <h3 class="card-title">${this.name}</h3>
-            <h6 class="card-title">${this.liqour.name}</h6>
-            Ingredients |
-            <ul>
-                
-                
-                ${this.ingredients}
-            </ul>
-            <br><br>
-            <p class="card-text">Instructions</p>
-            <p class="card-text"> ${this.instructions}</p>
-            
-          </div>
+        <img src=${this.image_url} class="card-img-top"height="220" width="50"alt="..."> <div class="card-body"> 
+        <h3 class="card-title">${this.name}</h3> 
+        <h6 class="card-title">${this.liqour.name}</h6> 
+        Ingredients |
+        <br><br>
+        <ul> ${this.ingredients} </ul>
+        <br><br> <p class="card-text">Instructions |</p>
+        <p class="card-text"> ${this.instructions}</p> 
         </div>
-      </div>
         </div>
-
-      <br><br>
-    `
+        </div>
+        </div>
+        </div>
+        </div>
+        <br><br>;
+        `
     }
     
 }
