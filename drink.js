@@ -18,12 +18,12 @@ class Drink {
           <img src=${this.image_url} class="card-img-top"height="200" width="50"alt="...">
           <div class="card-body">
             <h3 class="card-title">${this.name}</h3>
-            <h5 class="card-title">${this.liqour}</h5>
+            <h5 class="card-title">${this.liqour.name}</h5>
             <ul>
-                <!--- ingredients nested -->
+                Ingredients |
                 ${this.ingredients}
             </ul>
-            <p class="card-text">Instructions: ${this.instructions}</p>
+            <p class="card-text">Instructions | ${this.instructions}</p>
             <div class="d-flex justify-content-center">
               <div class="btn-group">
               <button class="btn btn-light">
