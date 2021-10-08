@@ -20,19 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
         createButton.style.display = 'none';
 
     });
-    
+
+
     function createFormHandler(e) {
         const name = document.querySelector('#drink-name').value;
         const ingredients = document.querySelector('#drink-ingredients').value;
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
-        // grab the value of select 
+        // grab the value of select dropdown for liqour
+        const liqourId = parseInt(document.querySelector('#liqour-dropdown').value)
+        
 
-        postDrink(name, liqour, ingredients, instructions, image_url);
+        postDrink(name, liqourId, ingredients, instructions, image_url);
     }
 
-    function postDrink(name, liqour, ingredients, instructions, image_url) {
-        const drinkData = { name, liqour, ingredients, instructions, image_url };
+    function postDrink(name, liqour_id, ingredients, instructions, image_url) {
+        const drinkData = { name, liqour_id, ingredients, instructions, image_url };
         fetch('http://localhost:3000/api/v1/drinks', {
             // POST request
             method: "POST",
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(liqours => {
                 liqours.data.forEach(function (liqour) {
-                    console.log(liqours);
+                    
                     let newLiqour = new Liqour(liqour, liqour.attributes);
                     document.querySelector('#liqour-dropdown').innerHTML += newLiqour.renderLiqour();
                 });
