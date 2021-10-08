@@ -6,12 +6,30 @@ class Liqour {
   }
 
   renderLiqour() {
-    // dropdown of liqours in database
-    let liqourDropdown = document.querySelector("#liqour-dropdown");
-    let liqourDropdownOption = document.createElement("option");
-    liqourDropdownOption.value = this.id;
-    liqourDropdownOption.textContent = this.name;
-    liqourDropdown.appendChild(liqourDropdownOption);
+    // return checkbox for liqour or have field to add new liqour
+    return `
+      <div class="liqour-item">
+        <input type="checkbox" name="liqour" value="${this.id}" id="liqour-${this.id}">
+        <label for="liqour-${this.id}">${this.name}</label>
+      </div>
+    `;
+
+
+
+
+  
+
+
+
+
+
+
+    
+
+
+    
+
+
 
     
   }

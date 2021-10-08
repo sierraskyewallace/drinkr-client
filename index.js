@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(liqours => {
                 liqours.data.forEach(function (liqour) {
                     console.log(liqours);
-                    let newLiqour = new Liqour(liqour, liqours.attributes);
+                    let newLiqour = new Liqour(liqour, liqour.attributes);
                     document.querySelector('#liqours-container').innerHTML += newLiqour.renderLiqour();
                 });
             });
