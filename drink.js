@@ -12,17 +12,17 @@ class Drink {
     
     renderDrink() {
         return `
-        <br><br>
-        <div class="container">
-        <div class="row-3">
-        <div class="col-3"style="margin: 2em">
-        <div class="card text-center text-white bg-dark">
+        
+        <div class="row row-cols-1 row-cols-md-2"style="margin: 3em;">
+        <div class="col-md-4">
+        <div class="card text-left text-white bg-dark mb-3 w-40 h-20">
         <img src=${this.image_url} class="card-img-top"height="220" width="50"alt="..."> <div class="card-body"> 
         <h3 class="card-title">${this.name}</h3> 
-        <h6 class="card-title">${this.liqour.name}</h6> 
+        <h6 class="card-title">Liqour | ${this.liqour.name}</h6>
+        <br><br>
         Ingredients |
         <br><br>
-        <ul> ${this.ingredients} </ul>
+        <p>${this.ingredients}</p>
         <br><br> <p class="card-text">Instructions |</p>
         <p class="card-text"> ${this.instructions}</p> 
         </div>
