@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const ingredients = document.querySelector('#drink-ingredients').value;
         const instructions = document.querySelector('#drink-instructions').value;
         const image_url = document.querySelector('#drink-image-url').value;
-        const liqour = document.querySelector('#liqour-dropdown').value;
+        // grab the value of select 
+
         postDrink(name, liqour, ingredients, instructions, image_url);
     }
 
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 liqours.data.forEach(function (liqour) {
                     console.log(liqours);
                     let newLiqour = new Liqour(liqour, liqour.attributes);
-                    document.querySelector('#liqours-container').innerHTML += newLiqour.renderLiqour();
+                    document.querySelector('#liqour-dropdown').innerHTML += newLiqour.renderLiqour();
                 });
             });
     }
